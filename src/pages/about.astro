@@ -1,19 +1,45 @@
 ---
+const pageTitle = "About astro";
 
+const identity = {
+  firstName: "Sarah",
+  country: "Canada",
+  occupation: "Technical Writer",
+  hobbies: ["photography", "birdwatching", "baseball"],
+};
+
+const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
+import "../../src/styles/global.css";
 ---
 
+
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>About astro</title>
-	</head>
-	<body>
-        <a href="/">home</a>
-        <a href="/blog">blog</a>
-		<h1>This is the about astro page</h1>
-	
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{pageTitle}</title>
+    <style>
+        h1 {
+          color: purple;
+          font-size: 4rem;
+        }
+      </style>
+  </head>
+  <body>
+    <a href="/">home</a>
+    <a href="/blog">blog</a>
+    <h1>This is the {pageTitle} page</h1>
+
+    <li>my name is {identity.firstName}</li>
+    <p>my skills are</p>
+    <ul>
+      {
+        skills.map((skill, index) => {
+          return <li>{skill}</li>;
+        })
+      }
+    </ul>
+  </body>
 </html>
