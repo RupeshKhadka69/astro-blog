@@ -78,3 +78,11 @@ h1 {
     display: none;
   }
 }
+html.dark {
+  background-color: #0c0c0c;
+  color: #fff;
+}
+
+.dark .nav-links a {
+  color: #fff;
+}
